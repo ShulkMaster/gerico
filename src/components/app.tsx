@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
-import {example1} from './arrays';
-import './styles.css';
+import {example1} from '../arrays';
+import '../styles.css';
+import {Pokemon} from './Pokemon';
 
 export const App = () => {
   const [state, setState] = useState('red');
@@ -20,6 +21,7 @@ const SimpleWrapper = ({text, ...props}: { text: string } & DivProps) => {
   return (
     <div {...props}>
       <p>{text}</p>
+      <Pokemon />
     </div>
   )
 }

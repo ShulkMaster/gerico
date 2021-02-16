@@ -1,5 +1,5 @@
 // generic types
-type Loadable<T> = {
+export type Loadable<T> = {
   isLoading: boolean;
   isDirty: boolean;
   data: T;
