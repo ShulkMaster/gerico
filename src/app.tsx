@@ -19,7 +19,7 @@ type DivProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HT
 const SimpleWrapper = ({text, ...props}: { text: string } & DivProps) => {
   return (
     <div {...props}>
-      <p>{text} a</p>
+      <p>{text}</p>
     </div>
   )
 }
