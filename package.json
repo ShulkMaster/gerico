@@ -1,0 +1,23 @@
+{
+  "name": "gerico",
+  "version": "1.0.0",
+  "description": "Open demo code to learn generics in typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "y"
+  },
+  "keywords": [
+    "typescript",
+    "generic",
+    "demo"
+  ],
+  "author": "shulkmaster",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "typescript": "^4.1.5"
+  }
+}
