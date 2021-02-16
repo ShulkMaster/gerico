@@ -87,3 +87,20 @@ const wayback: WayBack<Identificable, User> = {
   child: {id: 's'},
 }
 
+// Type Parameters in Generic Constraints
+const diffCopy = <T, K extends keyof T >(obj: T, keys: K[]): { [p: string]: unknown } => {
+  const copy: { [k: string]: unknown } = {};
+  for (const key of keys) {
+    copy[key.toString()] = obj[key]
+  }
+  return copy;
+}
+
+export const example3 = () => {
+  const user = diffCopy(wayback.parent, ['name', 'name']);
+  const dat2 = diffCopy(myDefault, ['data']);
+  console.log(user)
+  console.log(dat2)
+  console.log(myTree)
+}
+
