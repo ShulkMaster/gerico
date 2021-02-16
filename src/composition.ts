@@ -23,11 +23,6 @@ const pipe = <T>(...transforms: ((input: T) => T)[]): (input: T) => T => {
   }
 }
 
-// const chain = <F, G, H, K>(): K => {
-
-// }
-
-
 export const example2 = () => {
   // by composing function we can stack transforms
   const func = compose(double, inclement);
