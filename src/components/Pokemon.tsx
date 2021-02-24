@@ -15,25 +15,35 @@ type Pokemon = {
 export const Pokemon = () => {
   const [state, setState] = useState<Loadable<Pokemon | undefined>>({
     data: undefined,
+    error: undefined,
     isDirty: false,
     isLoading: false,
   })
 
   const keys = ['base_experience', 'height', 'name', 'weight']
-  const entries = Object.entries(state.data || {}).filter(e =>  keys.includes(e[0]));
+  const entries = Object.entries(state.data || {}).filter(e => keys.includes(e[0]));
 
   const fetch = () => {
     apiGet<Pokemon>('/pokemon/25').then(r => {
       if (isApiSuccessResult(r.result)) {
         setState({
-          isDirty: true,
+          isDirty: false,
+          error: undefined,
           isLoading: false,
           data: r.result,
-        })
+        });
+      } else {
+        setState({
+          isDirty: false,
+          error: r.result,
+          isLoading: false,
+          data: undefined,
+        });
       }
     })
   }
-  console.log(entries);
+
+  if (state.error) return <p>{state.error.message}</p>;
   return (
     <div>
       {state.isDirty

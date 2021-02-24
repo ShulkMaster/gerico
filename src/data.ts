@@ -1,7 +1,12 @@
 // generic types
+
+import { ErrorCause } from "request";
+
+
 export type Loadable<T> = {
   isLoading: boolean;
   isDirty: boolean;
+  error: ErrorCause | undefined;
   data: T;
 };
 
@@ -12,12 +17,14 @@ type Filterable<T> = {
 const aLoadable: Loadable<number> = {
   data: 2,
   isDirty: false,
+  error: undefined,
   isLoading: true,
 }
 
 const aFilterable: Filterable<number> = {
   data: 2,
   isDirty: false,
+  error: undefined,
   isLoading: true,
   filter: 0,
 }
